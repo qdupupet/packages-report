@@ -1,5 +1,7 @@
+library(tidyverse)
 ## create a data frame from data/installed-packages.csv
 ## with, e.g., readr::read_csv() or read.csv()
+ipt = read.csv('data/installed-packages.csv')
 
 ## filter out packages in the default library
 ## keep variables Package and Built
@@ -20,6 +22,8 @@ apt_freqtable <- apt %>%
 ## YES overwrite the files that are there now
 ## they came from me (Jenny)
 ## they are just examples
+
+write.csv(apt_freqtable, 'data/add-on-packages-freqtable.csv')
 
 ## when this script works, stage & commit it and the csv files
 ## PUSH!
